@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Grade Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>🎓 Student Grade Calculator</h1>
+
+    <label for="student">Student name</label>
+    <input id="student" placeholder="e.g. Ana">
+    <label>Subjects and grades (0-100)</label>
+    <div id="subjects"></div>
+
+    <button class="secondary" onclick="addSubject()">+ Add subject</button>
+    <button class="primary" onclick="calculate()">Calculate</button>
+    <div id="error" class="error"></div>
+  </div>
+
+  <div class="card" id="resultCard" hidden>
+    <div id="result"></div>
+  </div>
+
+  <div class="card" id="classCard" hidden>
+    <h2>Class summary</h2>
+    <ol id="ranking"></ol>
+    <p id="classAverage"></p>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
