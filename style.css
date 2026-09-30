@@ -30,6 +30,18 @@ button { padding: 10px 14px; border: 0; border-radius: 6px; cursor: pointer; fon
 
 .fail { color: #b91c1c; font-weight: 700; }
 
+.conditional { color: #a16207; font-weight: 700; }
+
 .big { font-size: 2rem; font-weight: 700; }
 
 li { margin: 4px 0; }
+
+.scale { margin-top: 20px; }
+
+.scale summary { cursor: pointer; font-weight: 600; }
+
+.scale-table-wrap { overflow-x: auto; margin-top: 10px; }
+
+.scale table { width: 100%; border-collapse: collapse; text-align: left; font-size: .85rem; }
+
+.scale th, .scale td { padding: 6px 4px; border-bottom: 1px solid #e5e7eb; }
