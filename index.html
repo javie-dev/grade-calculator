@@ -8,53 +8,79 @@
 </head>
 
 <body>
-
-  <div class="card">
-    <h1>BukSu Student Grade Calculator</h1>
-
-    <label for="student">Student name</label>
-    <input id="student" placeholder="e.g. Ana">
-    <label>Final grades (1.00-5.00; 1.00 is highest)</label>
-    <div id="subjects"></div>
-
-    <button class="secondary" onclick="addSubject()">+ Add subject</button>
-    <button class="primary" onclick="calculate()">Calculate</button>
-    <div id="error" class="error"></div>
-
-    <details class="scale">
-      <summary>BukSU grading scale</summary>
-      <div class="scale-table-wrap">
-        <table>
-          <thead>
-            <tr><th>Grade point</th><th>Equivalent</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>1.00-1.24</td><td>Excellent / A+</td></tr>
-            <tr><td>1.25-1.49</td><td>Superior / A</td></tr>
-            <tr><td>1.50-1.74</td><td>Very Good / A-</td></tr>
-            <tr><td>1.75-1.99</td><td>Good / B+</td></tr>
-            <tr><td>2.00-2.24</td><td>Very Satisfactory / B</td></tr>
-            <tr><td>2.25-2.49</td><td>High Average / B-</td></tr>
-            <tr><td>2.50-2.74</td><td>Average / C+</td></tr>
-            <tr><td>2.75-2.99</td><td>Fair / C</td></tr>
-            <tr><td>3.00-3.99</td><td>Passing / C-</td></tr>
-            <tr><td>4.00-4.99</td><td>Conditional / D (removal exam)</td></tr>
-            <tr><td>5.00</td><td>Failing / F</td></tr>
-          </tbody>
-        </table>
+  <main class="page-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">BUKSU ACADEMIC TOOLS</p>
+        <h1>Student Grade Calculator</h1>
       </div>
-    </details>
-  </div>
+      <div class="brand-mark" aria-label="BukSU">BSU</div>
+    </header>
 
-  <div class="card" id="resultCard" hidden>
-    <div id="result"></div>
-  </div>
+    <div class="workspace">
+      <section class="panel input-panel" aria-labelledby="inputTitle">
+        <div class="panel-heading">
+          <p class="eyebrow">GRADE ENTRY</p>
+          <h2 id="inputTitle">Student details</h2>
+        </div>
 
-  <div class="card" id="classCard" hidden>
-    <h2>Class summary</h2>
-    <ol id="ranking"></ol>
-    <p id="classAverage"></p>
-  </div>
+        <label for="student">Student name</label>
+        <input id="student" placeholder="e.g. Ana" autocomplete="name">
+        <label>Subjects and final grades</label>
+        <p class="field-hint">Grade points: 1.00 is highest, 5.00 is lowest.</p>
+        <div id="subjects"></div>
+
+        <div class="actions">
+          <button class="secondary" onclick="addSubject()">+ Add subject</button>
+          <button class="primary" onclick="calculate()">Calculate average</button>
+        </div>
+        <div id="error" class="error" role="alert"></div>
+
+        <details class="scale">
+          <summary>BukSU grading scale</summary>
+          <div class="scale-table-wrap">
+            <table>
+              <thead>
+                <tr><th>Grade point</th><th>Equivalent</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1.00-1.24</td><td>Excellent / A+</td></tr>
+                <tr><td>1.25-1.49</td><td>Superior / A</td></tr>
+                <tr><td>1.50-1.74</td><td>Very Good / A-</td></tr>
+                <tr><td>1.75-1.99</td><td>Good / B+</td></tr>
+                <tr><td>2.00-2.24</td><td>Very Satisfactory / B</td></tr>
+                <tr><td>2.25-2.49</td><td>High Average / B-</td></tr>
+                <tr><td>2.50-2.74</td><td>Average / C+</td></tr>
+                <tr><td>2.75-2.99</td><td>Fair / C</td></tr>
+                <tr><td>3.00-3.99</td><td>Passing / C-</td></tr>
+                <tr><td>4.00-4.99</td><td>Conditional / D (removal exam)</td></tr>
+                <tr><td>5.00</td><td>Failing / F</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+
+      <div class="results-column">
+        <section class="panel result-panel" id="resultCard" aria-labelledby="resultTitle">
+          <div class="panel-heading">
+            <p class="eyebrow">YOUR CALCULATED AVERAGE</p>
+            <h2 id="resultTitle">Results</h2>
+          </div>
+          <div id="result" class="empty-state">Enter a student's grades and calculate to see the result.</div>
+        </section>
+
+        <section class="panel class-panel" id="classCard" aria-labelledby="classTitle">
+          <div class="panel-heading">
+            <p class="eyebrow">STUDENT OVERVIEW</p>
+            <h2 id="classTitle">Class summary</h2>
+          </div>
+          <ol id="ranking"></ol>
+          <p id="classAverage" class="empty-state">Class results will appear here after calculation.</p>
+        </section>
+      </div>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 

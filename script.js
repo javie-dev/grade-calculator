@@ -101,8 +101,6 @@ function calculate() {
 
 function showClassSummary() {
   const names = Object.keys(results);
-  if (names.length < 2) return;
-
   names.sort((a, b) => results[a] - results[b]);
 
   let html = "";
@@ -112,6 +110,7 @@ function showClassSummary() {
   document.getElementById("ranking").innerHTML = html;
 
   const classAverage = calculateAverage(Object.values(results));
-  document.getElementById("classAverage").textContent = "Class average grade point: " + classAverage.toFixed(2);
-  document.getElementById("classCard").hidden = false;
+  const averageElement = document.getElementById("classAverage");
+  averageElement.className = "class-average";
+  averageElement.textContent = "Class average grade point: " + classAverage.toFixed(2);
 }
